@@ -1,0 +1,58 @@
+/* === Lab6 Dark/Light Theme Overrides === */
+:root {
+  --bg-light: #ffffff;
+  --text-light: #0b1220;
+  --bg-dark: #0b0b0f;
+  --text-dark: #f3f4f8;
+}
+
+body.light-theme {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Override Tailwind bg-white / text-slate- classes in dark mode */
+body.dark-theme .bg-white {
+  background-color: #111827 !important;
+  color: #f3f4f8 !important;
+}
+body.dark-theme .text-slate-600,
+body.dark-theme .text-slate-700,
+body.dark-theme .text-slate-900 {
+  color: #d1d5db !important;
+}
+
+/* Navbar & Footer */
+body.dark-theme nav,
+body.dark-theme footer {
+  background-color: #111827 !important;
+  color: #f3f4f8 !important;
+}
+
+/* Toggle Button */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+.theme-toggle:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+body.dark-theme .theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
